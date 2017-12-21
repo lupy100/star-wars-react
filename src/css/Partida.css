@@ -1,0 +1,46 @@
+#containerPartida{
+    margin-top:200px; 
+    color: #67686F;
+}
+#containerPartida button{
+    float: none;
+    background-color: #f44336;    
+}
+#infos{
+    margin-top: 30px;
+}
+#estadio{
+    border-radius: 50px;
+    background-color : #E2E1E7;
+    padding:15px;
+}
+button{
+    padding: 10px 15px;
+    border-radius: 5px;    
+    border: 0px;
+    font-size: 20px;
+    background-color: #2196f3;
+    color: #fff;
+    float: left;
+    margin-top: 55px;
+}
+body{
+    text-align: center;
+    background-color: #EAEAEA;
+    font-family: Verdana,Geneva,sans-serif; 
+}
+#containerTime{
+    width: 220px;
+    height: 230px;
+    padding: 40px;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    border-radius: 16px;
+    background-color: #EAEAEA;
+}
+main{
+	width: 934px;
+	height: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
