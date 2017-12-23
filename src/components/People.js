@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Button from './Button/Button';
 
 class People extends Component {
   constructor(props) {
@@ -55,8 +56,8 @@ class People extends Component {
             <h3>{peoples.height}</h3>
           </div>
         )}
-        <button onClick={() => this.goTo(previous)}> <span>Teste 0 </span> </button>
-        <button onClick={() => this.goTo(next)}> <span>Teste 1 </span> </button>
+        <Button onClick={() => this.goTo(previous)}> <span>Teste 0 </span> </Button>
+        <Button onClick={() => this.goTo(next)}> <span>Teste 1 </span> </Button>
       </div>
     );
   }
