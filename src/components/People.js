@@ -56,8 +56,8 @@ class People extends Component {
             <h3>{peoples.height}</h3>
           </div>
         )}
-        <Button onClick={() => this.goTo(previous)}> <span>Teste 0 </span> </Button>
-        <Button onClick={() => this.goTo(next)}> <span>Teste 1 </span> </Button>
+        <Button onClick={() => this.goTo(previous)}>Anterior</Button>
+        <Button onClick={() => this.goTo(next)}>Proximo</Button>
       </div>
     );
   }
