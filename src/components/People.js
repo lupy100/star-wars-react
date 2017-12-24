@@ -1,44 +1,38 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Button from './Button/Button';
+import NextAndPrevious from './Pagination/NextAndPrevious';
 
 class People extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       people: [],
       next: '',
       previous: ''
     }
+
+    this.updateData = this.updateData.bind(this);
+
+  }
+  
+  updateData(data){
+    this.setState ({
+      people: data.results,
+      next: data.next,
+      previous: data.previous
+    });
   }
 
   getPeople() {
     return axios.get('https://swapi.co/api/people')
       .then((response) => {
-        console.log(response.data);
         this.setState({
           people: response.data.results,
           next: response.data.next,
           previous: response.data.previous
         })
-        console.log(this.state.people)
       });
-  }
-
-  goTo(next, previous) {
-    if (next !== null && previous !== null) {
-      return axios.get(next, previous)
-        .then((response) => {
-          console.log(response.data);
-          this.setState({
-            people: response.data.results,
-            next: response.data.next,
-            previous: response.data.previous
-          })
-        });
-    }
-    console.log("erro")
   }
 
   componentDidMount() {
@@ -56,8 +50,8 @@ class People extends Component {
             <h3>{peoples.height}</h3>
           </div>
         )}
-        <Button onClick={() => this.goTo(previous)}>Anterior</Button>
-        <Button onClick={() => this.goTo(next)}>Proximo</Button>
+
+        <NextAndPrevious updateData={this.updateData} next={next} previous={previous} />
       </div>
     );
   }
