@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NextAndPrevious from './Pagination/NextAndPrevious';
+import NextAndPrevious from '../Pagination';
 
 class People extends Component {
   constructor(props) {

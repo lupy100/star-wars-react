@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LogoStarWars from '../../components/Logo/LogoStarWars';
+import LogoStarWars from '../../components/Logo';
 import './styles/Home.scss'
 class Home extends Component {
   render() {

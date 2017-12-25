@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Button from "../Button/Button";
+import Button from "../Button";
 import "./styles/NextAndPrevious.scss";
 
 class NextAndPrevious extends Component {

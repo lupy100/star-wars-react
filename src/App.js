@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import EasterEgg from 'react-easter-egg';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import People from './components/People';
-import Home from './Pages/Home/Home';
-import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 class App extends Component {
   
