@@ -4,7 +4,7 @@ $font-color: rgb(255, 255, 255);
   top: 0;
   width: 100vw;
   display: flex;
-  background: url(../../../imagens/background.jpg) no-repeat center 0px;
+  background: url(../../../imagens/background.jpg) no-repeat top center;
   justify-content: space-around;
   &-list {
     margin: 0;
@@ -32,6 +32,6 @@ $font-color: rgb(255, 255, 255);
     }
   }
   + * {
-    padding-top: 74px;
+    padding-top: 72px;
   }
 }
