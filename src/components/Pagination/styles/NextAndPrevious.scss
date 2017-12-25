@@ -1,0 +1,23 @@
+$hover-color:rgb(179, 78, 179);
+.NextAndPrevious{
+  .Button{
+    outline: 0;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 4px;
+    height: 32px;
+    font-family: Arial;
+    color: rgba(0, 0, 0, 0.65);
+    transition: color .3s ease;
+    margin-right: 15px;
+    &:hover{
+      border-color:$hover-color ;
+      color: $hover-color;
+    }
+    &.disable{
+      border-color: #d9d9d9;
+      color: rgba(0, 0, 0, 0.25);
+      cursor: not-allowed;
+    }
+  }
+}
