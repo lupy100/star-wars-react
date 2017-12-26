@@ -45,9 +45,9 @@ class People extends Component {
     return (
       <div className="People">
         {people.map((peoples, i) =>
-          <div key={i}>
-            <h1>{peoples.name}</h1>
-            <h3>{peoples.height}</h3>
+          <div key={i} className="People-card">
+            <h1>Name: {peoples.name}</h1>
+            <h3>Height: {peoples.height}</h3>
           </div>
         )}
 
