@@ -1,0 +1,32 @@
+.ContainerModal {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.92);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 20;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease-in;
+  will-change: opacity;
+
+  &.--active {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+.Button.ContainerModal--closeModal {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+color: white;
+}
