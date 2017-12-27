@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NextAndPrevious from '../Pagination';
-import Card from './Card';
-
+import Card from '../Card';
+import './styles/People.scss'
 class People extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +14,11 @@ class People extends Component {
     }
 
     this.updateData = this.updateData.bind(this);
-  
+
   }
 
-  updateData(data){
-    this.setState ({
+  updateData(data) {
+    this.setState({
       people: data.results,
       next: data.next,
       previous: data.previous
@@ -45,12 +45,11 @@ class People extends Component {
 
     return (
       <div className="People">
-        {people.map((peoples, i) =>
-          <div key={i} className="People-card">
-            <Card infos={peoples}/>
-          </div>
-        )}
-
+        <div className="People-grid">
+          {people.map((peoples, i) =>
+            <Card key={i} infos={peoples} />
+          )}
+        </div>
         <NextAndPrevious updateData={this.updateData} next={next} previous={previous} />
       </div>
     );
