@@ -19,16 +19,16 @@ class NextAndPrevious extends Component {
       <div className="NextAndPrevious">
         {/* Validação Botão Anterior */}
         {previous !== null ? (
-          <Button onClick={() => this.goTo(previous)}>Anterior</Button>
+          <Button onClick={() => this.goTo(previous)}>Previous</Button>
         ) : (
-            <Button className="disable" disabled="disabled">Anterior</Button>
+            <Button className="disable" disabled="disabled">Previous</Button>
           )}
 
         {/* Validação Botão Proximo */}
         {next !== null ? (
-          <Button onClick={() => this.goTo(next)}>Proximo</Button>
+          <Button onClick={() => this.goTo(next)}>Next</Button>
         ) : (
-            <Button className="disable" disabled="disabled">Proximo</Button>
+            <Button className="disable" disabled="disabled">Next</Button>
           )}
       </div>
     );

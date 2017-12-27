@@ -26,7 +26,7 @@ class People extends Component {
   }
 
   getPeople() {
-    return axios.get('https://swapi.co/api/people')
+    return axios.get('https://swapi.co/api/people/')
       .then((response) => {
         this.setState({
           people: response.data.results,
