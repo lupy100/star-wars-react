@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import axios from 'axios';
-
+import './styles/Card.scss'
 class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
+      // loading: true
     }
+  }
+
+  componentDidMount() {
+    // setTimeout(() => this.setState({ loading: false }), 5500); // simulates loading of data
   }
 
   componentWillMount() {
@@ -21,7 +26,8 @@ class Card extends Component {
     )
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({ movies: [] });
+    this.setState({ movies: [], loading: true });
+    // setTimeout(() => this.setState({ loading: false }), 5500); // simulates loading of data
 
     if (nextProps.infos.url !== this.props.infos.url) {
       nextProps.infos.films.map((filmsUrl) =>
@@ -37,20 +43,29 @@ class Card extends Component {
     return true;
   }
   render() {
-    var createFilms = this.state.movies.map((item, i) => {
+    var createFilms = this.state.movies.map((item) => {
       return (
-        <span key={i}>{item.title} , </span>
+        item.title
       );
     }
-
     );
-
     const { name, height } = this.props.infos;
+
+    if (this.state.loading) { // if your component doesn't have to wait for async data, remove this block 
+      return null; // render null when app is not ready
+    }
     return (
       <div className="Card">
-        <h1>Name: {name}</h1>
-        <h3>Height: {height}</h3>
-        <h3>Movies: {createFilms}</h3>
+        <img src="https://png.icons8.com/ios/540//star-wars.png" alt="" />
+        <div className="Card-infos">
+          <h1>{name}</h1>
+          <div>
+            <img src="https://image.flaticon.com/icons/svg/108/108637.svg" alt=""/>
+            <h3>{height} cm</h3>
+            {/* <h3>Movies: {createFilms.join(', ')}</h3> */}
+            <img src="https://image.flaticon.com/icons/svg/149/149150.svg" alt=""/>
+          </div>
+        </div>
       </div>
     );
   }
