@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NextAndPrevious from '../Pagination';
+import Card from './Card';
 
 class People extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       people: [],
       next: '',
@@ -13,9 +14,9 @@ class People extends Component {
     }
 
     this.updateData = this.updateData.bind(this);
-
-  }
   
+  }
+
   updateData(data){
     this.setState ({
       people: data.results,
@@ -46,8 +47,7 @@ class People extends Component {
       <div className="People">
         {people.map((peoples, i) =>
           <div key={i} className="People-card">
-            <h1>Name: {peoples.name}</h1>
-            <h3>Height: {peoples.height}</h3>
+            <Card infos={peoples}/>
           </div>
         )}
 
