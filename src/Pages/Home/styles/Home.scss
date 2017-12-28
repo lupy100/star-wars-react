@@ -1,8 +1,9 @@
 .Home {
+  padding-top: 0 !important;
   &-header {
     display: flex;
     justify-content: center;
-    height: 450px;
+    height: 100vh;
     background: url(../../../imagens/background.jpg) no-repeat center 0px;
     .LogoStarWars {
       align-self: center;
@@ -12,11 +13,6 @@
           width: 300px;
         }
       }
-    }
-  }
-  &-body{
-    &-title{
-      text-align: center;
     }
   }
 }
