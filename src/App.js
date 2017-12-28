@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import People from './components/People';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Planet from './components/Planet/Planet';
 
 class App extends Component {
   
@@ -20,7 +21,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
 
           <Route path="/people" exact component={People} />
-          {/* <Route path="/planet" exact component={Planet} /> */}
+          <Route path="/planet" exact component={Planet} />
 
         </div>
       </Router>
