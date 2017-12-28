@@ -47,7 +47,7 @@ class People extends Component {
       <div className="People">
         <div className="People-grid">
           {people.map((peoples, i) =>
-            <Card key={i} infos={peoples} />
+            <Card key={i} infos={peoples} type={"people"}/>
           )}
         </div>
         <NextAndPrevious updateData={this.updateData} next={next} previous={previous} />
