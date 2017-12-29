@@ -34,7 +34,10 @@ class Planet extends Component {
           next: response.data.next,
           previous: response.data.previous
         })
-      });
+      })
+      .catch((error) =>{
+        console.log(error);
+      })
   }
 
   componentDidMount() {

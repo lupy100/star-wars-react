@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EasterEgg from 'react-easter-egg';
-import { BrowserRouter as Router, Route, Redirect,Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import People from './components/People';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
@@ -20,12 +20,12 @@ class App extends Component {
           </EasterEgg>
           <Navbar />
           <Switch>
-          <Route path="/" exact component={Home} />
-            <Route path="/people" exact component={People} />
-            <Route path="/planet" exact component={Planet} />
+            <Route path="/star-wars-react/" exact component={Home} />
+            <Route path="/star-wars-react/people" component={People} />
+            <Route path="/star-wars-react/planet" component={Planet} />
 
-            <Route path='/404' component={NotFound} />
-            <Redirect from='*' to='/404' />
+            <Route path='/star-wars-react/404' component={NotFound} />
+            <Redirect from='*' to='/star-wars-react/404' />
           </Switch>
 
         </div>

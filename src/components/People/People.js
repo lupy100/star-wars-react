@@ -25,6 +25,7 @@ class People extends Component {
     });
   }
 
+
   getPeople() {
     return axios.get('https://swapi.co/api/people/')
       .then((response) => {
@@ -33,6 +34,9 @@ class People extends Component {
           next: response.data.next,
           previous: response.data.previous
         })
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
@@ -47,7 +51,7 @@ class People extends Component {
       <div className="People">
         <div className="People-grid">
           {people.map((peoples, i) =>
-            <Card key={i} infos={peoples} type={"people"}/>
+            <Card key={i} infos={peoples} type={"people"} />
           )}
         </div>
         <NextAndPrevious updateData={this.updateData} next={next} previous={previous} />

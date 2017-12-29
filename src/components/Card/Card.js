@@ -19,49 +19,61 @@ class Card extends Component {
   }
 
   componentWillMount() {
-      if (this.props.type === "planet") {
-        this.props.infos.films.map((filmsUrl) =>
-          axios.get(filmsUrl)
-            .then((response) => {
-              this.state.moviesWorld.push({
-                title: response.data.title,
-              });
-              this.setState({ moviesWorld: this.state.moviesWorld });
-            })
-        );
-      } else {
-        this.props.infos.films.map((filmsUrl) =>
-          axios.get(filmsUrl)
-            .then((response) => {
-              this.state.moviesPeple.push({
-                title: response.data.title,
-              });
-              this.setState({ moviesPeple: this.state.moviesPeple });
-            })
-        );
-  
-        axios.get(this.props.infos.homeworld)
+    if (this.props.type === "planet") {
+      this.props.infos.films.map((filmsUrl) =>
+        axios.get(filmsUrl)
           .then((response) => {
-            this.setState({
-              homeworld: response.data
-            })
-            this.state.homeworld.films.map((filmsUrl) =>
-              axios.get(filmsUrl)
-                .then((response) => {
-                  this.state.moviesWorld.push({
-                    title: response.data.title,
-                  });
-                  this.setState({ moviesWorld: this.state.moviesWorld });
-                })
-            )
-          });
-      }
-    
+            this.state.moviesWorld.push({
+              title: response.data.title,
+            });
+            this.setState({ moviesWorld: this.state.moviesWorld });
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      );
+    } else {
+      this.props.infos.films.map((filmsUrl) =>
+        axios.get(filmsUrl)
+          .then((response) => {
+            this.state.moviesPeple.push({
+              title: response.data.title,
+            });
+            this.setState({ moviesPeple: this.state.moviesPeple });
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      );
+
+      axios.get(this.props.infos.homeworld)
+        .then((response) => {
+          this.setState({
+            homeworld: response.data
+          })
+          this.state.homeworld.films.map((filmsUrl) =>
+            axios.get(filmsUrl)
+              .then((response) => {
+                this.state.moviesWorld.push({
+                  title: response.data.title,
+                });
+                this.setState({ moviesWorld: this.state.moviesWorld });
+              })
+              .catch((error) => {
+                console.log(error);
+              })
+          )
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+
 
 
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({ moviesPeple: [], moviesWorld: []});
+    this.setState({ moviesPeple: [], moviesWorld: [] });
 
     if (nextProps.infos.url !== this.props.infos.url) {
       if (this.props.type === "planet") {
@@ -73,6 +85,9 @@ class Card extends Component {
               });
               this.setState({ moviesWorld: this.state.moviesWorld });
             })
+            .catch((error) => {
+              console.log(error);
+            })
         );
       } else {
         nextProps.infos.films.map((filmsUrl) =>
@@ -82,6 +97,9 @@ class Card extends Component {
                 title: response.data.title,
               });
               this.setState({ moviesPeple: this.state.moviesPeple });
+            })
+            .catch((error) => {
+              console.log(error);
             })
         );
 
@@ -98,8 +116,15 @@ class Card extends Component {
                   });
                   this.setState({ moviesWorld: this.state.moviesWorld });
                 })
+                .catch(function (error) {
+                  console.log(error);
+                })
             )
+          })
+          .catch((error) => {
+            console.log(error);
           });
+
 
       }
 
