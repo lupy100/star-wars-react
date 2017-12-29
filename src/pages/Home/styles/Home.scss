@@ -1,11 +1,13 @@
-.Home {
+.Home,
+.NotFound {
   padding-top: 0 !important;
   &-header {
     display: flex;
     justify-content: center;
     height: 100vh;
     background: url(../../../imagens/background.jpg) no-repeat center 0px;
-    .LogoStarWars {
+    .LogoStarWars,
+    .imgNotFound {
       align-self: center;
       img {
         width: 600px;

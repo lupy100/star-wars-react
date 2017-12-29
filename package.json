@@ -2,6 +2,7 @@
   "name": "star-wars-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://lupy100.github.io/star-wars-react",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "axios": "^0.17.1",
@@ -51,7 +52,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -95,6 +98,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "webpack": "^3.5.1"
